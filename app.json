@@ -31,6 +31,19 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#577590",
+      "translucent": false
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "515d4a56-df82-4b1b-a80a-24855d1dc7cc"
+      }
+    },
+    "owner": "ravi_choppari"
   }
 }
