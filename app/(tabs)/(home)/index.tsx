@@ -9,10 +9,12 @@ import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { useNavigation } from "expo-router";
 import { slokas } from "@/assets/data/slokas/hanuman/slokas";
+import { useData } from "@/store/DataContext";
 
 const { width } = Dimensions.get("window");
 
 export default function HomeScreen() {
+  const { state } = useData();
   const navigation: any = useNavigation();
   const RenderItem = ({ item }: any) => (
     <ThemedView style={styles.item}>
@@ -26,7 +28,7 @@ export default function HomeScreen() {
       >
         <Image source={item.image} style={styles.img} />
       </Pressable>
-      <ThemedText style={styles.text}>{item.god}</ThemedText>
+      <ThemedText style={styles.text}>{item.lang[state.language]}</ThemedText>
     </ThemedView>
   );
 
@@ -81,7 +83,7 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   text: {
-    fontSize: 14,
+    fontSize: 16,
     fontFamily: "hind-bold",
     paddingHorizontal: 8,
     textTransform: "uppercase",

@@ -3,6 +3,11 @@ import { sloka } from "./sloka";
 export const slokas = [
   {
     god: "hanuman",
+    lang: {
+      english: 'hanuman',
+      hindi: 'हनुमान',
+      telugu: 'హనుమాన్'
+    },
     image: require("@/assets/images/hanuman.png"),
     thumbnail: require("@/assets/images/hanuman_thumb.png"),
     data: [

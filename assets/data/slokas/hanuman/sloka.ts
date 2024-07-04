@@ -1,4 +1,3 @@
-import { english, hindi, telugu } from "./sloka_001";
 
 export const sloka = {
   sloka_001: {

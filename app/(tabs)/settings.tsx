@@ -16,7 +16,7 @@ export default function TabTwoScreen() {
   
 
   const handleValueChange = (value: any) => {
-    console.log('[SET_LANGUAGE]', value)
+    // console.log('[SET_LANGUAGE]', value)
     dispatch({ type: 'SET_LANGUAGE', payload: { value } })
   };
   return (

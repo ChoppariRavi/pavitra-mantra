@@ -1,16 +1,16 @@
 {
   "expo": {
-    "name": "pavitra-mantra",
+    "name": "Pavitra Mantra",
     "slug": "pavitra-mantra",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#fbcd2f"
     },
     "ios": {
       "supportsTablet": true
@@ -18,7 +18,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#fbcd2f"
       },
       "package": "com.ravi_choppari.pavitramantra"
     },
@@ -34,7 +34,7 @@
       "typedRoutes": true
     },
     "androidStatusBar": {
-      "backgroundColor": "#577590",
+      "backgroundColor": "#f4f6fc",
       "translucent": false
     },
     "extra": {

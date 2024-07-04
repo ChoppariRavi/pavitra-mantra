@@ -64,7 +64,7 @@ const DataProvider: React.FC<DataProviderProps> = ({ children }: any) => {
 
   useEffect(() => {
     const saveData = async () => {
-      console.log('[state]', state)
+      // console.log('[state]', state)
       try {
         await AsyncStorage.setItem("appState", JSON.stringify(state));
       } catch (error) {

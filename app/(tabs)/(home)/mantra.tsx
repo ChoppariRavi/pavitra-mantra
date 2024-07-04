@@ -26,7 +26,7 @@ const Mantra = () => {
   } = navigation
     .getState()
     .routes?.find(({ name }: any) => name === "mantra").params;
-  console.log(navigation.routes);
+  // console.log(navigation.routes);
   const [fontSize, setFontSize] = React.useState(18);
   return (
     <ThemedView style={styles.container}>
@@ -56,7 +56,7 @@ const Mantra = () => {
         </ThemedView>
       </ThemedView>
       <ThemedView style={styles.fontSizeWrapper}>
-        <HorizontalStepper onChange={(i) => setFontSize(i * 4 + 11)} />
+        <HorizontalStepper onChange={(i) => setFontSize((i + 1) * 4 + 11)} />
       </ThemedView>
     </ThemedView>
   );
