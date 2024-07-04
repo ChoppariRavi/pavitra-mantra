@@ -1,7 +1,4 @@
-import * as sloka001 from "./sloka_001";
-import * as sloka002 from "./sloka_002";
-import * as sloka003 from "./sloka_003";
-import * as sloka004 from "./sloka_004";
+import { sloka } from "./sloka";
 
 export const slokas = [
   {
@@ -11,103 +8,198 @@ export const slokas = [
     data: [
       {
         id: "sloka_001",
-        name: "Hanuman Chalisa",
-        sloka: sloka001.english,
+        english: {
+          title: "Hanuman Chalisa",
+          content: sloka["sloka_001"].english,
+        },
+        hindi: {
+          title: "हनुमान चालीसा",
+          content: sloka["sloka_001"].hindi,
+        },
+        telugu: {
+          title: "హనుమాన్ చాలీసా",
+          content: sloka["sloka_001"].telugu,
+        },
       },
       {
         id: "sloka_002",
-        name: "Anjaneya Dandakam",
-        sloka: sloka002.english,
+        english: {
+          title: "Anjaneya Dandakam",
+          content: sloka["sloka_002"].english,
+        },
+        hindi: {
+          title: "आंजनेय दंडकम्",
+          content: sloka["sloka_002"].hindi,
+        },
+        telugu: {
+          title: "ఆంజనేయ దండకం",
+          content: sloka["sloka_002"].telugu,
+        },
       },
       {
         id: "sloka_003",
-        name: "Hanuman Ashtottara Sata Namavali",
-        sloka: sloka003.english,
+        english: {
+          title: "Hanuman Ashtottara Sata Namavali",
+          content: sloka["sloka_003"].english,
+        },
+        hindi: {
+          title: "अष्टोत्तर शत नामावलि",
+          content: sloka["sloka_003"].hindi,
+        },
+        telugu: {
+          title: "అష్టోత్తర శత నామావళి",
+          content: sloka["sloka_003"].telugu,
+        },
       },
       {
         id: "sloka_004",
-        name: "Ramayana Jaya Mantram",
-        sloka: sloka004.english,
+        english: {
+          title: "Ramayana Jaya Mantram",
+          content: sloka["sloka_004"].english,
+        },
+        hindi: {
+          title: "रामायण जय मंत्रम्",
+          content: sloka["sloka_004"].hindi,
+        },
+        telugu: {
+          title: "రామాయణ జయ మంత్రం",
+          content: sloka["sloka_004"].telugu,
+        },
       },
       {
         id: "sloka_005",
-        name: "Hanuman Pancha Ratnam",
-        sloka: sloka002.english,
+        english: {
+          title: "Hanuman Pancha Ratnam",
+          content: sloka["sloka_005"].english,
+        },
+        hindi: {
+          title: "हनुमत्-पंचरत्नम्",
+          content: sloka["sloka_005"].hindi,
+        },
+        telugu: {
+          title: "హనుమత్-పంచరత్నం",
+          content: sloka["sloka_005"].telugu,
+        },
       },
       {
         id: "sloka_006",
-        name: "Hanuman Ashtottara Sata Naama Stotram",
-        sloka: sloka002.english,
+        english: {
+          title: "ASHTOTTARA SATA NAAMA STOTRAM",
+          content: sloka["sloka_006"].english,
+        },
+        hindi: {
+          title: "अष्टोत्तर शतनाम स्तोत्रम्",
+          content: sloka["sloka_006"].hindi,
+        },
+        telugu: {
+          title: "అష్టోత్తర శతనామ స్తోత్రం",
+          content: sloka["sloka_006"].telugu,
+        },
       },
       {
         id: "sloka_007",
-        name: "Hanuman Ashtakam",
-        sloka: sloka002.english,
+        english: {
+          title: "HANUMAN ASHTAKAM",
+          content: sloka["sloka_007"].english,
+        },
+        hindi: {
+          title: "श्री हनुमदष्टकम्",
+          content: sloka["sloka_007"].hindi,
+        },
+        telugu: {
+          title: "శ్రీ హనుమదష్టకం",
+          content: sloka["sloka_007"].telugu,
+        },
       },
       {
         id: "sloka_008",
-        name: "Hanuman Bajrang Baan",
-        sloka: sloka002.english,
+        english: {
+          title: "HANUMAN BAJRANG BAAN",
+          content: sloka["sloka_008"].english,
+        },
+        hindi: {
+          title: "हनुमान् बजरंग बाण",
+          content: sloka["sloka_008"].hindi,
+        },
+        telugu: {
+          title: "హనుమాన్ బజరంగ బాణ",
+          content: sloka["sloka_008"].telugu,
+        },
       },
       {
         id: "sloka_009",
-        name: "Anjaneya Sahasra Namam",
-        sloka: sloka002.english,
+        english: {
+          title: "APADUDDHARAKA HANUMAN STOTRAM",
+          content: sloka["sloka_009"].english,
+        },
+        hindi: {
+          title: "आपदुद्धारक हनुमत्स्तोत्रम्",
+          content: sloka["sloka_009"].hindi,
+        },
+        telugu: {
+          title: "పవమాన సూక్తంఆపదుద్ధారక హనుమత్స్తోత్రం",
+          content: sloka["sloka_009"].telugu,
+        },
       },
       {
         id: "sloka_010",
-        name: "Ekadasha Mukhi Hanuman Kavacham",
-        sloka: sloka002.english,
+        english: {
+          title: "HANUMAN KAVACHAM",
+          content: sloka["sloka_010"].english,
+        },
+        hindi: {
+          title: "श्री हनुमत्कवचम्",
+          content: sloka["sloka_010"].hindi,
+        },
+        telugu: {
+          title: "శ్రీ హనుమత్కవచం",
+          content: sloka["sloka_010"].telugu,
+        },
       },
       {
         id: "sloka_011",
-        name: "Panchamukha Hanuman Kavacham",
-        sloka: sloka002.english,
+        english: {
+          title: "ANJANEYA BHUJANGA STOTRAM",
+          content: sloka["sloka_011"].english,
+        },
+        hindi: {
+          title: "आंजनेय भुजंग स्तोत्रम्",
+          content: sloka["sloka_011"].hindi,
+        },
+        telugu: {
+          title: "ఆంజనేయ భుజంగ స్తోత్రం",
+          content: sloka["sloka_011"].telugu,
+        },
       },
       {
         id: "sloka_012",
-        name: "Apaduddharaka Hanuman Stotram",
-        sloka: sloka002.english,
+        english: {
+          title: "HANUMAN MALA MANTRAM",
+          content: sloka["sloka_012"].english,
+        },
+        hindi: {
+          title: "हनुमान् माला मंत्रम्",
+          content: sloka["sloka_012"].hindi,
+        },
+        telugu: {
+          title: "హనుమాన్ మాలా మంత్రం",
+          content: sloka["sloka_012"].telugu,
+        },
       },
       {
         id: "sloka_013",
-        name: "Hanuman Kavacham",
-        sloka: sloka002.english,
-      },
-      {
-        id: "sloka_014",
-        name: "Anjaneya Bhujanga Prayata Stotram",
-        sloka: sloka002.english,
-      },
-      {
-        id: "sloka_015",
-        name: "Hanuman Mala Mantram",
-        sloka: sloka002.english,
-      },
-      {
-        id: "sloka_016",
-        name: "Hanuman Chalisa in Telugu",
-        sloka: sloka002.english,
-      },
-      {
-        id: "sloka_017",
-        name: "Sri Hanuman Badabanala Stotram",
-        sloka: sloka002.english,
-      },
-      {
-        id: "sloka_018",
-        name: "Anjaneya Dvadasha Nama Stotram",
-        sloka: sloka002.english,
-      },
-      {
-        id: "sloka_019",
-        name: "Sri Anjaneya Navaratna Mala Stotram",
-        sloka: sloka002.english,
-      },
-      {
-        id: "sloka_020",
-        name: "Sri Rama Dootha Anjaneya Stotram",
-        sloka: sloka002.english,
+        english: {
+          title: "SRI RAMA DOOTHA ANJANEYA STOTRAM",
+          content: sloka["sloka_013"].english,
+        },
+        hindi: {
+          title: "श्री राम दूत आंजनेय स्तोत्रम्",
+          content: sloka["sloka_013"].hindi,
+        },
+        telugu: {
+          title: "శ్రీ రామ దూత ఆంజనేయ స్తోత్రం",
+          content: sloka["sloka_013"].telugu,
+        },
       },
     ],
   },

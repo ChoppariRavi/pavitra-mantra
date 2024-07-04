@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -7,17 +7,24 @@ import {
   Pressable,
 } from "react-native";
 import { ThemedText } from "./ThemedText";
+import { useData } from "@/store/DataContext";
 
 const steps = ["S", "M", "L", "XL"];
 
 const HorizontalStepper = ({ onChange = (item: any) => {} }) => {
-  const [currentStep, setCurrentStep] = useState(1);
+  const { state, dispatch } = useData();
+  const [currentStep, setCurrentStep] = useState(steps.indexOf(state.fSize));
+  // console.log(state)
+
+  useEffect(() => {
+    onChange(currentStep)
+  }, [])
 
   return (
     <View style={styles.container}>
       <View style={styles.stepperContainer}>
-        {steps.map((step, index) => (
-          <View key={index} style={styles.stepContainer}>
+        {steps.map((value, index) => (
+          <View key={value} style={styles.stepContainer}>
             <Pressable
               style={[
                 styles.circle,
@@ -26,9 +33,10 @@ const HorizontalStepper = ({ onChange = (item: any) => {} }) => {
               onPress={() => {
                 setCurrentStep(index);
                 onChange(index + 1);
+                dispatch({ type: "SET_FONT_SIZE", payload: { value } });
               }}
             >
-              <ThemedText style={styles.stepText}>{step}</ThemedText>
+              <ThemedText style={styles.stepText}>{value}</ThemedText>
             </Pressable>
             <Text style={styles.label}>{""}</Text>
             {/* {index < steps.length - 1 && <View style={styles.line} />} */}
@@ -42,7 +50,7 @@ const HorizontalStepper = ({ onChange = (item: any) => {} }) => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    // backgroundColor: "#F5F5F5",
+    backgroundColor: "#FFFFFF",
     flex: 1,
     justifyContent: "center",
   },
@@ -50,8 +58,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    // marginBottom: 40,
-    gap: 8
+    backgroundColor: "#FFFFFF",
+    gap: 8,
   },
   stepContainer: {
     flexDirection: "row",
@@ -61,16 +69,17 @@ const styles = StyleSheet.create({
     width: 38,
     height: 38,
     borderRadius: 4,
-    backgroundColor: "#ccc",
+    backgroundColor: "#f4f6fd",
     justifyContent: "center",
     alignItems: "center",
   },
   activeCircle: {
-    backgroundColor: "#B10819",
+    backgroundColor: "#fbcd2f",
   },
   stepText: {
-    color: "#fff",
-    fontWeight: "bold",
+    color: "#333",
+    fontFamily: "hind-semibold",
+    lineHeight: 38,
   },
   label: {
     // marginHorizontal: 10,

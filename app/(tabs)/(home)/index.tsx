@@ -26,7 +26,7 @@ export default function HomeScreen() {
       >
         <Image source={item.image} style={styles.img} />
       </Pressable>
-      <ThemedText style={styles.text}>{item.name}</ThemedText>
+      <ThemedText style={styles.text}>{item.god}</ThemedText>
     </ThemedView>
   );
 
@@ -51,44 +51,42 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 8,
     paddingHorizontal: 4,
-    // backgroundColor: "#FA9300"
-    backgroundColor: "#B10819",
+    // backgroundColor: "##fbcd2f"
+    backgroundColor: "#f4f6fc",
   },
   titleContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
     gap: 8,
-    backgroundColor: "#B10819",
+    backgroundColor: "#f4f6fc",
   },
   title: {
-    color: "white",
     fontFamily: "hind-bold",
-    fontSize: 24,
+    fontSize: 18,
     lineHeight: 32,
-    borderBottomColor: "#FA9300",
-    borderBottomWidth: 2,
     width: "100%",
     textAlign: "center",
   },
   item: {
     borderRadius: 8,
     margin: 4,
-    backgroundColor: "#B10819",
+    // Shadow properties for iOS
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.35,
+    shadowRadius: 2,
+    // Shadow property for Android
+    elevation: 5,
   },
   imageWrapper: {
-    borderWidth: 2,
-    borderColor: "#FA9300",
-    backgroundColor: "#FA9300",
     borderRadius: 8,
+    padding: 8,
   },
   text: {
-    color: "#FFF",
-    fontSize: 16,
-    fontFamily: "hind-regular",
-    textAlign: "center",
+    fontSize: 14,
+    fontFamily: "hind-bold",
+    paddingHorizontal: 8,
     textTransform: "uppercase",
-    // marginVertical: 4,
+    textAlign: 'center',
+    marginBottom: 8
   },
   img: {
     width: width / 2 - 22,
