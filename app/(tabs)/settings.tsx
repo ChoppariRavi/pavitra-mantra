@@ -4,11 +4,12 @@ import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import RadioButtonGroup from "@/components/RadioButtonGroup";
 import { useData } from "@/store/DataContext";
+import i18n from "../../translation";
 
 const options = [
-  { label: "English", value: "english" },
-  { label: "हिंदी", value: "hindi" },
-  { label: "తెలుగు", value: "telugu" },
+  { label: "English", value: "english", locale: 'en' },
+  { label: "हिंदी", value: "hindi", locale: 'hi' },
+  { label: "తెలుగు", value: "telugu", locale: 'te' },
 ];
 
 export default function TabTwoScreen() {
@@ -18,6 +19,7 @@ export default function TabTwoScreen() {
   const handleValueChange = (value: any) => {
     // console.log('[SET_LANGUAGE]', value)
     dispatch({ type: 'SET_LANGUAGE', payload: { value } })
+    i18n.changeLanguage(value.substr(0, 2))
   };
   return (
     <ThemedView style={styles.container}>

@@ -6,8 +6,10 @@ import React from "react";
 import { StyleSheet, Image, Pressable, View, Text } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { useData } from "@/store/DataContext";
+import { useTranslation } from "react-i18next";
 
 const List = () => {
+  const { t } = useTranslation();
   const { state } = useData();
   const navigation: any = useNavigation();
   const {
@@ -15,6 +17,7 @@ const List = () => {
     god = "",
     image,
     thumbnail,
+    slokas,
   } = navigation
     .getState()
     .routes.find(({ name }: any) => name === "list")?.params;
@@ -29,7 +32,7 @@ const List = () => {
         }
       >
         <ThemedView style={styles.container}>
-          {data.map((item: any) => (
+          {slokas.map((item: any, idx: number) => (
             <Pressable
               key={item.id}
               style={styles.item}
@@ -39,16 +42,18 @@ const List = () => {
                   god,
                   image,
                   thumbnail,
-                  item
+                  item,
                 })
               }
             >
               <View style={styles.titleContainer}>
-                <Image source={thumbnail} style={styles.thumbnail} />
-                <ThemedView style={{backgroundColor: '#FFF'}}>
-                  <ThemedText style={styles.text}>{item?.[state.language]?.title || item?.name}</ThemedText>
+                <ThemedView style={styles.thumbnail}>
+                  <ThemedText style={styles.text}>{idx + 1}</ThemedText>
+                </ThemedView>
+                <ThemedView style={{ backgroundColor: "#FFF" }}>
+                  <ThemedText style={styles.text}>{t(item?.title)}</ThemedText>
                   <ThemedText style={styles.desc}>
-                    {item?.[state.language].content.trim().substr(0, 20)}...
+                    {t(item?.id).trim().substr(0, 20)}...
                   </ThemedText>
                 </ThemedView>
               </View>
@@ -143,12 +148,17 @@ const styles = StyleSheet.create({
     // width: '95%'
   },
   thumbnail: {
-    width: 55,
-    height: 55,
+    // width: 55,
+    // height: 55,
     borderRadius: 8,
     borderWidth: 1.5,
     borderColor: "#FFF",
+    backgroundColor: "#fbcd2f",
     objectFit: "contain",
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingVertical: 8
   },
   text: {
     // color: "#FFF",
@@ -156,7 +166,8 @@ const styles = StyleSheet.create({
     fontFamily: "hind-bold",
     // lineHeight: 32,
     // width: "98%",
-    flexWrap: 'wrap'
+    flexWrap: "wrap",
+    textTransform: "capitalize"
   },
   desc: {
     color: "#a5a5a5",

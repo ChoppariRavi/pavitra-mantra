@@ -1,6 +1,7 @@
 // DataContext.tsx
 import React, { createContext, useContext, useEffect, useReducer } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import i18n from "@/translation";
 
 type State = {
   count: number;
@@ -49,9 +50,11 @@ const DataProvider: React.FC<DataProviderProps> = ({ children }: any) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await AsyncStorage.getItem("appState");
+        const data: any = await AsyncStorage.getItem("appState");
         console.log('[data]', data)
+        
         if (data) {
+          i18n.changeLanguage(JSON.parse(data).language.substr(0, 2))
           dispatch({ type: "SET_STATE", payload: JSON.parse(data) });
         }
       } catch (error) {

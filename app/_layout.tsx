@@ -40,7 +40,7 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <StatusBar animated={true} backgroundColor="#f4f6fc" hidden={false} />
+      <StatusBar animated={true} backgroundColor="#fbcd2f" hidden={false} />
       <DataProvider>
         <View style={{ flex: 1, marginTop: StatusBar?.currentHeight || 60 }}>
           <Stack>

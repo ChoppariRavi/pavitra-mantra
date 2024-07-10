@@ -13,21 +13,24 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import { useNavigation, useRouter } from "expo-router";
 import HorizontalStepper from "@/components/HorizontalStepper";
 import { useData } from "@/store/DataContext";
+import { useTranslation } from "react-i18next";
+
+const steps = ["S", "M", "L", "XL"];
 
 const Mantra = () => {
+  const { t } = useTranslation();
   const { state } = useData();
-  // console.log('[language]', state.language)
+  // console.log('[language]', steps.indexOf(state.fSize) , (steps.indexOf(state.fSize) + 1) * 4 + 13)
   const navigation: any = useNavigation();
   const {
     id = "001",
-    name = "",
-    sloka = null,
     item = null
   } = navigation
     .getState()
     .routes?.find(({ name }: any) => name === "mantra").params;
   // console.log(navigation.routes);
   const [fontSize, setFontSize] = React.useState(18);
+  console.log(fontSize);
   return (
     <ThemedView style={styles.container}>
       <ThemedView style={styles.itemWrapper}>
@@ -39,7 +42,7 @@ const Mantra = () => {
             >
               <AntDesign name="left" size={18} color="black" />
             </Pressable>
-            <ThemedText style={styles.title}>{item?.[state.language].title || name}</ThemedText>
+            <ThemedText style={styles.title}>{t(item?.title)}</ThemedText>
           </ThemedView>
           <ThemedView style={styles.scrollWrapper}>
             <ScrollView style={styles.scrollView}>
@@ -49,14 +52,14 @@ const Mantra = () => {
                   { fontSize: fontSize, lineHeight: fontSize + 8 },
                 ]}
               >
-                {item[state.language].content}
+                {t(item.id)}
               </ThemedText>
             </ScrollView>
           </ThemedView>
         </ThemedView>
       </ThemedView>
       <ThemedView style={styles.fontSizeWrapper}>
-        <HorizontalStepper onChange={(i) => setFontSize((i + 1) * 4 + 11)} />
+        <HorizontalStepper onChange={(i) => setFontSize((i || 1) * 4 + 12)} />
       </ThemedView>
     </ThemedView>
   );
