@@ -16,21 +16,24 @@ import { useData } from "@/store/DataContext";
 import { useTranslation } from "react-i18next";
 
 const steps = ["S", "M", "L", "XL"];
+const sizes: any = {
+  S: 14,
+  M: 18,
+  L: 22,
+  XL: 24,
+};
 
 const Mantra = () => {
   const { t } = useTranslation();
   const { state } = useData();
   // console.log('[language]', steps.indexOf(state.fSize) , (steps.indexOf(state.fSize) + 1) * 4 + 13)
   const navigation: any = useNavigation();
-  const {
-    id = "001",
-    item = null
-  } = navigation
+  const { id = "001", item = null } = navigation
     .getState()
     .routes?.find(({ name }: any) => name === "mantra").params;
   // console.log(navigation.routes);
-  const [fontSize, setFontSize] = React.useState(18);
-  console.log(fontSize);
+  const [fontSize, setFontSize] = React.useState("M");
+  console.log('[fontSize]', fontSize);
   return (
     <ThemedView style={styles.container}>
       <ThemedView style={styles.itemWrapper}>
@@ -49,7 +52,10 @@ const Mantra = () => {
               <ThemedText
                 style={[
                   styles.description,
-                  { fontSize: fontSize, lineHeight: fontSize + 8 },
+                  {
+                    fontSize: sizes[fontSize],
+                    lineHeight: sizes[fontSize] + 12,
+                  },
                 ]}
               >
                 {t(item.id)}
@@ -59,7 +65,7 @@ const Mantra = () => {
         </ThemedView>
       </ThemedView>
       <ThemedView style={styles.fontSizeWrapper}>
-        <HorizontalStepper onChange={(i) => setFontSize((i || 1) * 4 + 12)} />
+        <HorizontalStepper onChange={(i) => setFontSize(i)} />
       </ThemedView>
     </ThemedView>
   );
@@ -82,7 +88,7 @@ const styles = StyleSheet.create({
     gap: 8,
     alignItems: "center",
     marginBottom: 4,
-    backgroundColor: "#f4f6fc"
+    backgroundColor: "#f4f6fc",
   },
   backButton: {
     backgroundColor: "#fbcd2f",
@@ -91,25 +97,25 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   scrollView: {
-    borderRadius: 8,
+    // borderRadius: 8,
     backgroundColor: "#FFF",
-    paddingHorizontal: 12
+    paddingHorizontal: 12,
   },
   itemContainer: {
-    padding: 5,
-    borderRadius: 8,
+    // padding: 5,
+    // borderRadius: 8,
     backgroundColor: "#f4f6fc",
   },
   title: {
-    fontSize: 22,
+    // fontSize: 22,
     textAlign: "center",
     fontFamily: "hind-bold",
-    lineHeight: 34,
+    lineHeight: 48,
   },
   description: {
     fontSize: 18,
     color: "#000000",
-    lineHeight: 42,
+    lineHeight: 48,
     // backgroundColor: "#FFF",
     // fontFamily: "hind-semibold",
   },

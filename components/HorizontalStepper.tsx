@@ -13,12 +13,12 @@ const steps = ["S", "M", "L", "XL"];
 
 const HorizontalStepper = ({ onChange = (item: any) => {} }) => {
   const { state, dispatch } = useData();
-  const [currentStep, setCurrentStep] = useState(steps.indexOf(state.fSize));
+  const [currentStep, setCurrentStep] = useState(state.fSize);
   // console.log(state)
 
   useEffect(() => {
-    onChange(currentStep)
-  }, [])
+    onChange(currentStep);
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -28,11 +28,11 @@ const HorizontalStepper = ({ onChange = (item: any) => {} }) => {
             <Pressable
               style={[
                 styles.circle,
-                index === currentStep && styles.activeCircle,
+                value === currentStep && styles.activeCircle,
               ]}
               onPress={() => {
-                setCurrentStep(index);
-                onChange(index + 1);
+                setCurrentStep(value);
+                onChange(value);
                 dispatch({ type: "SET_FONT_SIZE", payload: { value } });
               }}
             >

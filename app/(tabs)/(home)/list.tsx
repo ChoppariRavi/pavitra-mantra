@@ -48,10 +48,13 @@ const List = () => {
             >
               <View style={styles.titleContainer}>
                 <ThemedView style={styles.thumbnail}>
-                  <ThemedText style={styles.text}>{idx + 1}</ThemedText>
+                  <Image
+                    source={require("@/assets/images/icon.png")}
+                    style={styles.thumb}
+                  />
                 </ThemedView>
                 <ThemedView style={{ backgroundColor: "#FFF" }}>
-                  <ThemedText style={styles.text}>{t(item?.title)}</ThemedText>
+                  <ThemedText style={styles.text}>{idx + 1}{'. '}{t(item?.title)}</ThemedText>
                   <ThemedText style={styles.desc}>
                     {t(item?.id).trim().substr(0, 20)}...
                   </ThemedText>
@@ -155,10 +158,10 @@ const styles = StyleSheet.create({
     borderColor: "#FFF",
     backgroundColor: "#fbcd2f",
     objectFit: "contain",
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingVertical: 8
+    justifyContent: "center",
+    alignItems: "center",
+    // paddingHorizontal: 16,
+    // paddingVertical: 8,
   },
   text: {
     // color: "#FFF",
@@ -167,7 +170,7 @@ const styles = StyleSheet.create({
     // lineHeight: 32,
     // width: "98%",
     flexWrap: "wrap",
-    textTransform: "capitalize"
+    textTransform: "capitalize",
   },
   desc: {
     color: "#a5a5a5",
@@ -195,6 +198,11 @@ const styles = StyleSheet.create({
     padding: 8,
     marginRight: 8,
     borderRadius: 4,
+  },
+  thumb: {
+    width: 32,
+    height: 32,
+    borderRadius: 8
   },
 });
 

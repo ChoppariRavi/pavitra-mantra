@@ -84,8 +84,8 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   imageWrapper: {
-    borderRadius: 8,
-    padding: 8,
+    borderTopRightRadius: 8,
+    borderTopLeftRadius: 8,
   },
   text: {
     fontSize: 16,
@@ -93,12 +93,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     textTransform: "uppercase",
     textAlign: "center",
-    marginBottom: 8,
+    margin: 8,
   },
   img: {
     width: "100%",
     height: 180,
-    borderRadius: 8,
+    // borderRadius: 8,
+    borderTopRightRadius: 8,
+    borderTopLeftRadius: 8,
   },
   logo: {
     width: "100%",
