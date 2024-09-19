@@ -20,7 +20,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#fbcd2f"
       },
-      "package": "com.ravi_choppari.pavitramantra"
+      "package": "com.ravi_choppari.pavitramantra",
+      "versionCode": 2   
     },
     "web": {
       "bundler": "metro",
