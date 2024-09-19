@@ -12,6 +12,7 @@ import { slokas } from "@/assets/data/slokas";
 import { useData } from "@/store/DataContext";
 import { useTranslation } from "react-i18next";
 import "../../../translation";
+import Header from "@/components/Header";
 
 const { width } = Dimensions.get("window");
 
@@ -40,6 +41,7 @@ export default function HomeScreen() {
       {/* <ThemedView style={styles.titleContainer}>
         <ThemedText style={styles.title}>{t("Pavitra Mantras")}</ThemedText>
       </ThemedView> */}
+      <Header title={t("Pavitra Mantras")} />
       <FlatList
         data={slokas}
         renderItem={({ item }) => <RenderItem item={item} />}
@@ -54,7 +56,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingVertical: 8,
+    // paddingVertical: 8,
     // paddingHorizontal: 4,
     // backgroundColor: "##fbcd2f"
     backgroundColor: "#f4f6fc",

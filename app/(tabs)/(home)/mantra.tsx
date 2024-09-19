@@ -120,14 +120,16 @@ const styles = StyleSheet.create({
     // fontFamily: "hind-semibold",
   },
   itemWrapper: {
-    height: "79.75%",
+    flex: 18,
+    // height: "100%",
     padding: 5,
     backgroundColor: "#f4f6fc",
   },
   fontSizeWrapper: {
-    height: "8%",
-    // borderTopWidth: 1,
-    // borderBottomWidth: 1,
+    flex: 2,
+    // height: "8%",
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
     borderColor: "#fbcd2f",
   },
 });

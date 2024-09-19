@@ -49,7 +49,7 @@ const HorizontalStepper = ({ onChange = (item: any) => {} }) => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    padding: 16,
     backgroundColor: "#FFFFFF",
     flex: 1,
     justifyContent: "center",

@@ -7,7 +7,7 @@ const RadioButton = ({ label, value, selected, onPress }: any) => {
   return (
     <Pressable onPress={() => onPress(value)} style={styles.container}>
       <Ionicons
-        size={25}
+        size={32}
         name={selected ? "radio-button-on" : "radio-button-off"}
         style={[selected ? styles.radioOn : styles.radioOff]}
       />
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 10,
+    marginBottom: 16,
   },
   label: {
     marginLeft: 10,
